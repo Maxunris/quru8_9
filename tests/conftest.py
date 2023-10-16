@@ -6,6 +6,6 @@ from selene.support.shared import browser
 def settings_browser():
     browser.config.timeout = 3
     browser.config.window_width = 1280
-    browser.config.window_height = 720
+    browser.config.window_height = 1024
 
     yield
