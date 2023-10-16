@@ -1,10 +1,11 @@
-import json
-
-import allure
-from allure import attachment_type
+import pytest
+from selene.support.shared import browser
 
 
-def test_attachments():
-    allure.attach("Text content", name="Text", attachment_type=attachment_type.TEXT)
-    allure.attach("<h1>Hello, world</h1>", name="Html", attachment_type=attachment_type.HTML)
-    allure.attach(json.dumps({"first": 1, "second": 2}), name="Json", attachment_type=attachment_type.JSON)
+@pytest.fixture(autouse=True)
+def settings_browser():
+    browser.config.timeout = 3
+    browser.config.window_width = 1280
+    browser.config.window_height = 720
+
+    yield
