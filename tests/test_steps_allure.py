@@ -18,5 +18,5 @@ def test_steps_allure(settings_browser):
     with allure.step('Нажимаем на Issues'):
         browser.element('#issues-tab').click()
 
-    with allure.step('Проверка наличия кнопки Issues'):
+    with allure.step('Проверка наличия нужной Issues'):
         browser.element(by.partial_text('test issue')).should(be.visible)
